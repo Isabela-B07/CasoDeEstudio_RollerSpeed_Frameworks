@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inscripción Instructor</title>
+</head>
+<body>
+    <h1>Formulario de Instructor</h1>
+
+    <form th:action="@{/instructores/guardar}" method="post" th:object="${instructor}">
+        <label>Nombre:</label>
+        <input type="text" th:field="*{nombre}" required><br><br>
+
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" required><br><br>
+
+        <label>Especialidad:</label>
+        <input type="text" th:field="*{especialidad}" required><br><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <br>
+    <a href="/instructores/listar">Ver lista de instructores</a>
+</body>
+</html>

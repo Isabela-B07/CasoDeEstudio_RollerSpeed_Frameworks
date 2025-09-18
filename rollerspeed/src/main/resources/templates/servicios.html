@@ -1,0 +1,143 @@
+<!-- templates/servicios.html -->
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RollerSpeed - Servicios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* --- Hero de servicios --- */
+        .hero-servicios {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 60vh;
+            width: 100%;
+            background: linear-gradient(90deg, #000000, #6a0dad, #400080, #1e3c72);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-servicios h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .hero-servicios h1 {
+                font-size: 2rem;
+                padding: 15px 25px;
+            }
+        }
+
+        /* --- Sección de servicios --- */
+        .seccion-servicios {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .seccion-servicios h2 {
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .servicios-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 20px;
+        }
+
+        .servicios-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .servicios-container::-webkit-scrollbar-thumb {
+            background: #6a0dad;
+            border-radius: 10px;
+        }
+
+        .card-servicio {
+            min-width: 220px;
+            border-radius: 15px;
+            overflow: hidden;
+            flex: 0 0 auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .card-servicio img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-servicio h5 {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .card-servicio p {
+            font-size: 0.9rem;
+            padding: 0 10px 10px 10px;
+        }
+
+        .card-servicio:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <!-- Hero de servicios -->
+    <section class="hero-servicios">
+        <h1>Nuestros Servicios</h1>
+    </section>
+
+    <!-- Sección central: tarjetas de servicios -->
+    <section class="seccion-servicios">
+        <div class="container">
+            <h2>Descubre lo que ofrecemos</h2>
+            <div class="servicios-container">
+                <div class="card-servicio">
+                    <img src="/images/ninos.jpg" alt="Clases para niños">
+                    <h5>Clases para niños</h5>
+                    <p>Aprende a patinar de manera divertida y segura.</p>
+                </div>
+                <div class="card-servicio">
+                    <img src="/images/adultos.jpg" alt="Clases para adultos">
+                    <h5>Clases para adultos</h5>
+                    <p>Perfecciona tu técnica y mantente en forma.</p>
+                </div>
+                <div class="card-servicio">
+                    <img src="/images/eventos.jpg" alt="Eventos">
+                    <h5>Eventos</h5>
+                    <p>Participa en competencias y exhibiciones.</p>
+                </div>
+                <div class="card-servicio">
+                    <img src="/images/talleres.jpg" alt="Talleres especiales">
+                    <h5>Talleres especiales</h5>
+                    <p>Aprende trucos y habilidades avanzadas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div th:replace="fragments/footer :: footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
