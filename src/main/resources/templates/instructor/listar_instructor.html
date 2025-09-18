@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Instructores</title>
+</head>
+<body>
+    <h1>Instructores Registrados</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Especialidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="instructor : ${instructores}">
+                <td th:text="${instructor.id}"></td>
+                <td th:text="${instructor.nombre}"></td>
+                <td th:text="${instructor.email}"></td>
+                <td th:text="${instructor.especialidad}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/instructores/form">Registrar nuevo instructor</a>
+</body>
+</html>
