@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Crear Clase</title>
+    <meta charset="UTF-8">
+    <title>Calendario de Clases</title>
+    <!-- Estilos de FullCalendar -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f8f9fa; }
+        h2 { text-align:center; margin:30px 0; color:#400080; }
+        #calendar { max-width: 900px; margin: 0 auto; background-color: #fff; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+    </style>
 </head>
 <body>
-    <h1>Formulario de Clase</h1>
+    <h2>📅 Calendario de Clases</h2>
+    <div id="calendar"></div>
 
-    <form th:action="@{/clases/guardar}" method="post" th:object="${clase}">
-        <label>Nombre de la clase:</label>
-        <input type="text" th:field="*{nombre}" required><br><br>
-
-        <label>Fecha y hora de inicio:</label>
-        <input type="datetime-local" th:field="*{fechaInicio}" required><br><br>
-
-        <label>Fecha y hora de fin:</label>
-        <input type="datetime-local" th:field="*{fechaFin}" required><br><br>
-
-        <button type="submit">Guardar</button>
-    </form>
-
-    <br>
-    <a href="/clases/listar">Ver lista de clases</a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'es',
+                themeSystem: 'bootstrap5',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+               
+                events: '/clases/estudiantes/eventos',
+                eventColor: '#6a0dad',
+                eventTextColor: '#ffffff',
+                height: 'auto',
+                navLinks: true,
+                dayMaxEvents: true
+            });
+            calendar.render();
+        });
+    </script>
 </body>
 </html>

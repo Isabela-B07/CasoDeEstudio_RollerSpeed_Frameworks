@@ -41,6 +41,26 @@
 
     .hero-text-box .btn { font-weight: bold; }
 
+    /* Sección motivacional */
+    .motivacion {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #f8f9fa;
+    }
+
+    .motivacion h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #6a0dad;
+    }
+
+    .motivacion p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      color: #333;
+    }
+
     /* Testimonios */
     .card p { font-style: italic; color: #333; }
     .card img {
@@ -60,53 +80,21 @@
     <div class="hero-text-box text-center">
       <h1 class="display-4 fw-bold text-white text-shadow mb-3">¡Bienvenido a RollerSpeed!</h1>
       <p class="lead text-white text-shadow">Clases de patinaje para todas las edades y niveles.</p>
-      <!-- 🔹 Corregido el enlace -->
+
       <a class="btn btn-primary btn-lg mt-3" th:href="@{/estudiantes/form}">Inscríbete ahora</a>
     </div>
   </section>
 
-  <!-- Sección de Servicios destacados -->
-  <section class="py-5">
+  <!-- Sección motivacional -->
+  <section class="motivacion">
     <div class="container">
-      <h2 class="text-center mb-4">Nuestros servicios</h2>
-      <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card h-100 text-center shadow-sm">
-            <img src="/images/ninos.jpg" class="card-img-top" alt="Clases para niños">
-            <div class="card-body">
-              <h5 class="card-title">Clases para niños</h5>
-              <p class="card-text">Aprende a patinar de manera divertida y segura.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100 text-center shadow-sm">
-            <img src="/images/Adultos.jpg" class="card-img-top" alt="Clases para adultos">
-            <div class="card-body">
-              <h5 class="card-title">Clases para adultos</h5>
-              <p class="card-text">Perfecciona tu técnica y mantente en forma.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100 text-center shadow-sm">
-            <img src="/images/eventos.jpg" class="card-img-top" alt="Eventos">
-            <div class="card-body">
-              <h5 class="card-title">Eventos</h5>
-              <p class="card-text">Participa en competencias y exhibiciones.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100 text-center shadow-sm">
-            <img src="/images/talleres.jpg" class="card-img-top" alt="Talleres especiales">
-            <div class="card-body">
-              <h5 class="card-title">Talleres especiales</h5>
-              <p class="card-text">Aprende trucos y habilidades avanzadas.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h2>Más que un deporte, un estilo de vida</h2>
+      <p>
+        En RollerSpeed, cada vuelta en la pista es un paso hacia tu mejor versión. 
+        Creemos en el poder del patinaje para inspirar confianza, disciplina y amistad. 
+        ¡Únete a nuestra comunidad y descubre tu potencial!
+      </p>
+      <a href="/servicios" class="btn btn-outline-primary btn-lg">Ver nuestros servicios</a>
     </div>
   </section>
 

@@ -19,25 +19,25 @@ public class EstudianteController {
     @Autowired
     private EstudianteService estudianteService;
 
-    // 👉 Mostrar formulario de inscripción
+    // Mostrar formulario de inscripción
     @GetMapping("/form")
     public String mostrarFormulario(Model model) {
         model.addAttribute("estudiante", new EstudianteModel());
-        return "form_estudiante"; // archivo HTML en templates
+        return "estudiante/form_estudiante";
     }
 
-    // 👉 Guardar estudiante
+    // Guardar estudiante
     @PostMapping("/guardar")
     public String guardar(@ModelAttribute EstudianteModel estudiante) {
         estudianteService.guardar(estudiante);
         return "redirect:/estudiantes/listar";
     }
 
-    // 👉 Listar estudiantes
+    // Listar estudiantes
     @GetMapping("/listar")
     public String listar(Model model) {
         List<EstudianteModel> estudiantes = estudianteService.listar();
         model.addAttribute("estudiantes", estudiantes);
-        return "listar_estudiantes"; // archivo HTML en templates
+        return "estudiante/listar_estudiantes";
     }
 }
