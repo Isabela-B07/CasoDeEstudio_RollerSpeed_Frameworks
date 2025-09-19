@@ -44,8 +44,16 @@
 
         .seccion-eventos h2 {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             font-weight: bold;
+        }
+
+        .seccion-eventos p.intro {
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            font-size: 1.1rem;
+            text-align: center;
+            color: #555;
         }
 
         .eventos-container {
@@ -96,12 +104,42 @@
         <h1>Eventos de la Escuela</h1>
     </section>
 
-    <!-- Sección central: lista de eventos -->
+    <!-- Sección general de eventos -->
+    <section class="seccion-eventos">
+        <div class="container">
+            <p class="intro">
+                En Roller Speed, creemos en la importancia de vivir experiencias memorables fuera de la pista.  
+                Nuestros eventos fortalecen la comunidad, celebran el esfuerzo y promueven la alegría del deporte.
+            </p>
+
+            <div class="eventos-container">
+                <!-- Tarjetas de eventos generales -->
+                <div class="card-evento">
+                    <h5>Eventos Recreativos Familiares</h5>
+                    <p>Cada dos semanas, los sábados, realizamos actividades lúdicas para estudiantes y sus familias.  
+                       ¡Bocadillos, juegos y mucha diversión asegurada!</p>
+                </div>
+
+                <div class="card-evento">
+                    <h5>Exhibiciones de Fin de Semestre</h5>
+                    <p>Al final de cada semestre, presentamos lo aprendido: coreografías, demostraciones técnicas  
+                       y actuaciones grupales. ¡Familiares y amigos son bienvenidos!</p>
+                </div>
+
+                <div class="card-evento">
+                    <h5>Competiciones Locales</h5>
+                    <p>Cada cuatro meses (enero, mayo y septiembre) participamos en competencias locales  
+                       con el objetivo de destacar y ganar. ¡Nuestros patinadores van por todo!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de próximos eventos -->
     <section class="seccion-eventos">
         <div class="container">
             <h2>Próximos Eventos</h2>
             <div class="eventos-container">
-                <!-- Tarjetas de eventos sin imagen -->
                 <div class="card-evento">
                     <h5>Competencia de Patinaje</h5>
                     <div class="fecha-hora">20 Septiembre 2025 - 10:00 AM</div>
@@ -131,8 +169,6 @@
                     <div class="fecha-hora">12 Octubre 2025 - 8:00 AM</div>
                     <p>Disfruta de un día completo de entrenamiento, diversión y actividades al aire libre con nuestros instructores.</p>
                 </div>
-
-                <!-- Agrega más eventos de la misma forma -->
             </div>
         </div>
     </section>

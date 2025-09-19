@@ -19,25 +19,25 @@ public class InstructorController {
     @Autowired
     private InstructorService instructorService;
 
-    // 👉 Mostrar formulario de inscripción
+    //Mostrar formulario de inscripción
     @GetMapping("/form")
     public String mostrarFormulario(Model model) {
         model.addAttribute("instructor", new InstructorModel());
-        return "form_instructor"; // archivo HTML en templates
+        return "instructor/form_instructor";
     }
 
-    // 👉 Guardar instructor
+    //Guardar instructor
     @PostMapping("/guardar")
     public String guardar(@ModelAttribute InstructorModel instructor) {
         instructorService.guardar(instructor);
         return "redirect:/instructores/listar";
     }
 
-    // 👉 Listar instructores
+    //Listar instructores
     @GetMapping("/listar")
     public String listar(Model model) {
         List<InstructorModel> instructores = instructorService.listar();
         model.addAttribute("instructores", instructores);
-        return "listar_instructores"; // archivo HTML en templates
+        return "instructor/listar_instructores";
     }
 }

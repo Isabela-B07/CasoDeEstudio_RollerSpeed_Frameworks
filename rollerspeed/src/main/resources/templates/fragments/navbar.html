@@ -48,7 +48,8 @@
                         Registro
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark shadow-lg border-0" aria-labelledby="registroDropdown">
-                        <li><a class="dropdown-item" th:href="@{/user/form_user}">Inscripción de Estudiantes</a></li>
+                        <!-- Corregido: apunta a /estudiantes/form -->
+                        <li><a class="dropdown-item" th:href="@{/estudiantes/form}">Inscripción de Estudiantes</a></li>
                         <li><a class="dropdown-item" th:href="@{/instructores/form}">Inscripción de Instructor</a></li>
                     </ul>
                 </li>
@@ -61,8 +62,7 @@
                     <ul class="dropdown-menu dropdown-menu-dark shadow-lg border-0" aria-labelledby="clasesDropdown">
                         <li><a class="dropdown-item" th:href="@{/estudiantes/listar}">Listar Estudiantes</a></li>
                         <li><a class="dropdown-item" th:href="@{/instructores/listar}">Listar Instructores</a></li>
-                        <li><a class="dropdown-item" th:href="@{/clases/estudiantes/eventos}">Calendario Estudiantes</a></li>
-                        <li><a class="dropdown-item" th:href="@{/clases/instructores/eventos}">Calendario Instructores</a></li>
+                        <li><a class="dropdown-item" th:href="@{/clases/estudiantes/eventos}">Calendario Semanal</a></li>
                     </ul>
                 </li>
 

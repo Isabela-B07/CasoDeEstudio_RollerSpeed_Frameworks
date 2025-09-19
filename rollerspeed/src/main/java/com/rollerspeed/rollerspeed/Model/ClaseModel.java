@@ -4,9 +4,15 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "clase")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ClaseModel {
 
     @Id
@@ -32,23 +38,4 @@ public class ClaseModel {
             inverseJoinColumns = @JoinColumn(name = "estudiante_id")
     )
     private Set<EstudianteModel> estudiantes = new HashSet<>();
-
-    // Getters y setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
-
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-
-    public LocalDateTime getFechaHora() { return fechaHora; }
-    public void setFechaHora(LocalDateTime fechaHora) { this.fechaHora = fechaHora; }
-
-    public InstructorModel getInstructor() { return instructor; }
-    public void setInstructor(InstructorModel instructor) { this.instructor = instructor; }
-
-    public Set<EstudianteModel> getEstudiantes() { return estudiantes; }
-    public void setEstudiantes(Set<EstudianteModel> estudiantes) { this.estudiantes = estudiantes; }
 }
