@@ -19,14 +19,14 @@ public class EstudianteController {
     @Autowired
     private EstudianteService estudianteService;
 
-    // Mostrar formulario de inscripción
+    // Mostrar formulario de inscripción.
     @GetMapping("/form")
     public String mostrarFormulario(Model model) {
         model.addAttribute("estudiante", new EstudianteModel());
         return "estudiante/form_estudiante";
     }
 
-    // Guardar estudiante
+    // Guardar estudiante.
     @PostMapping("/guardar")
     public String guardar(@ModelAttribute EstudianteModel estudiante) {
         estudianteService.guardar(estudiante);
