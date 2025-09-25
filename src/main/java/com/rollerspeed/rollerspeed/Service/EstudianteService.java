@@ -21,7 +21,8 @@ public class EstudianteService {
         estudianteRepository.save(estudiante);
     }
 
-    public EstudianteModel buscarPorId(Long id) {
+    
+    public EstudianteModel obtenerPorId(Long id) {
         return estudianteRepository.findById(id).orElse(null);
     }
 
