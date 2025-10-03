@@ -1,0 +1,188 @@
+<!-- templates/valores.html -->
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RollerSpeed - Valores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* --- Hero con imagen de fondo --- */
+        .hero-valores {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 70vh;
+            width: 100%;
+            background: url('/images/Valores.jpg') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-valores h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            margin: 0;
+            animation: fadeZoom 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeZoom {
+            0% { opacity: 0; transform: scale(0.9);}
+            100% { opacity: 1; transform: scale(1);}
+        }
+
+        @media (max-width: 768px) {
+            .hero-valores h1 {
+                font-size: 2rem;
+                padding: 15px 25px;
+            }
+        }
+
+        /* --- Sección de valores --- */
+        .seccion-valores {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .seccion-valores h2 {
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .valores-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 20px;
+        }
+
+        .valores-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .valores-container::-webkit-scrollbar-thumb {
+            background: #6a0dad;
+            border-radius: 10px;
+        }
+
+        .card-valor {
+            min-width: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            flex: 0 0 auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card-valor img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-valor h5 {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .card-valor p {
+            font-size: 0.9rem;
+            padding: 0 10px 10px 10px;
+        }
+
+        .card-valor:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <!-- Hero de valores -->
+    <section class="hero-valores">
+        <h1>Lo que nos mueve</h1>
+    </section>
+
+    <!-- Sección central: conoce nuestros valores -->
+    <section class="seccion-valores">
+        <div class="container">
+            <h2>Conoce nuestros valores</h2>
+
+            <!-- Texto introductorio -->
+            <div class="mb-5 text-start">
+                <p>En la escuela Roller Speed tenemos claro que el deporte representa algo más que solo ejercicio físico. 
+                   Es un proceso de aprendizaje, en el cual nuestros principios constituyen la base que orienta cada 
+                   entrenamiento, cada evento competitivo y cada vivencia en la escuela.</p>
+
+                <p>Por medio del patinaje aspiramos a inculcar valores que desarrollen no solo jóvenes atletas, sino también 
+                   personas íntegras y con valores. Por eso, nuestra escuela promueve:</p>
+            </div>
+
+            <!-- Tarjetas -->
+            <div class="valores-container">
+                <div class="card-valor">
+                    <img src="/images/respeto.jpg" alt="Respeto">
+                    <h5>Respeto</h5>
+                    <p>Fomentamos la consideración hacia los demás y sus diferencias.</p>
+                </div>
+                <div class="card-valor">
+                    <img src="/images/responsabilidad.jpg" alt="Responsabilidad">
+                    <h5>Responsabilidad</h5>
+                    <p>Cumplimos con nuestros compromisos y enseñamos disciplina.</p>
+                </div>
+                <div class="card-valor">
+                    <img src="/images/humildad.jpg" alt="Humildad">
+                    <h5>Humildad</h5>
+                    <p>Valoramos el aprendizaje y reconocemos el esfuerzo de todos.</p>
+                </div>
+                <div class="card-valor">
+                    <img src="/images/compromiso.jpg" alt="Compromiso">
+                    <h5>Compromiso</h5>
+                    <p>Nos dedicamos a alcanzar metas y fomentar la constancia.</p>
+                </div>
+                <div class="card-valor">
+                    <img src="/images/resiliencia.jpg" alt="Resiliencia">
+                    <h5>Resiliencia</h5>
+                    <p>Aprendemos a superar retos y seguir adelante con determinación.</p>
+                </div>
+                <div class="card-valor">
+                    <img src="/images/trabajoEnEquipo.jpg" alt="Trabajo en equipo">
+                    <h5>Trabajo en equipo</h5>
+                    <p>Fomentamos la colaboración y el apoyo mutuo.</p>
+                </div>
+                <div class="card-valor">
+                    <img src="/images/pasion.jpg" alt="Pasión">
+                    <h5>Pasión</h5>
+                    <p>Vivimos el patinaje con entusiasmo y dedicación.</p>
+                </div>
+                <div class="card-valor">
+                    <img src="/images/disciplina.jpg" alt="Disciplina">
+                    <h5>Disciplina</h5>
+                    <p>Seguimos reglas y fomentamos hábitos de crecimiento.</p>
+                </div>
+                <div class="card-valor">
+                    <img src="/images/excelencia.jpg" alt="Excelencia">
+                    <h5>Excelencia</h5>
+                    <p>Buscamos siempre dar lo mejor en enseñanza y práctica deportiva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div th:replace="fragments/footer :: footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

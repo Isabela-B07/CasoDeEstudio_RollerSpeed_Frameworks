@@ -1,0 +1,173 @@
+<!-- templates/servicios.html -->
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RollerSpeed - Servicios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* --- Hero de servicios --- */
+        .hero-servicios {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 60vh;
+            width: 100%;
+            background: linear-gradient(90deg, #000000, #6a0dad, #400080, #1e3c72);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-servicios h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .hero-servicios h1 {
+                font-size: 2rem;
+                padding: 15px 25px;
+            }
+        }
+
+        /* --- Sección de servicios --- */
+        .seccion-servicios {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .seccion-servicios h2 {
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .seccion-servicios p.intro {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .servicios-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 20px;
+        }
+
+        .servicios-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .servicios-container::-webkit-scrollbar-thumb {
+            background: #6a0dad;
+            border-radius: 10px;
+        }
+
+        .card-servicio {
+            min-width: 240px;
+            border-radius: 15px;
+            overflow: hidden;
+            flex: 0 0 auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+            background: #fff;
+        }
+
+        .card-servicio img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-servicio h5 {
+            margin: 15px 10px 10px 10px;
+            font-weight: bold;
+        }
+
+        .card-servicio p {
+            font-size: 0.9rem;
+            padding: 0 15px 15px 15px;
+            white-space: pre-line; /* permite saltos de línea */
+        }
+
+        .card-servicio:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <!-- Hero de servicios -->
+    <section class="hero-servicios">
+        <h1>Nuestros Servicios</h1>
+    </section>
+
+    <!-- Sección central: tarjetas de servicios -->
+    <section class="seccion-servicios">
+        <div class="container">
+            <h2>Descubre lo que ofrecemos</h2>
+            <p class="intro">
+                Como escuela de patinaje, sabemos que cada patinador tiene un objetivo distinto.  
+                Algunos quieren aprender desde cero, otros mejorar su técnica, y otros prepararse para competir al más alto nivel.  
+                Por eso, ofrecemos una variedad de servicios que se adaptan a las necesidades de cada persona.
+            </p>
+            <div class="servicios-container">
+                <div class="card-servicio">
+                    <img src="/images/Ninos.jpg" alt="Clases para Principiantes">
+                    <h5>Clases para Principiantes</h5>
+                    <p>Programa introductorio para niños y adultos que inician en el patinaje.  
+                       Aprendizaje seguro, paso a paso, con instructores certificados.</p>
+                </div>
+                <div class="card-servicio">
+                    <img src="/images/Adultos.jpg" alt="Entrenamiento Avanzado">
+                    <h5>Entrenamiento Avanzado</h5>
+                    <p>Para patinadores con experiencia que desean perfeccionar sus habilidades técnicas,  
+                       coreografías y estilo.</p>
+                </div>
+                <div class="card-servicio">
+                    <img src="/images/preparacionFisica.jpg" alt="Preparación Física">
+                    <h5>Preparación Física Especializada</h5>
+                    <p>Fortalecimiento muscular, equilibrio, resistencia y flexibilidad  
+                       enfocados en el rendimiento del patinador.</p>
+                </div>
+                <div class="card-servicio">
+                    <img src="/images/talleres.jpg" alt="Hábitos Saludables">
+                    <h5>Hábitos Saludables</h5>
+                    <p>Talleres sobre alimentación, descanso y bienestar integral  
+                       para deportistas jóvenes.</p>
+                </div>
+                <div class="card-servicio">
+                    <img src="/images/Liderazgo1.jpg" alt="Liderazgo y Crecimiento Personal">
+                    <h5>Liderazgo y Crecimiento Personal</h5>
+                    <p>Programas que desarrollan la confianza, la toma de decisiones  
+                       y la capacidad de guiar a otros.</p>
+                </div>
+                <div class="card-servicio">
+                    <img src="/images/eventos.jpg" alt="Preparación para Competiciones">
+                    <h5>Preparación para Competencias</h5>
+                    <p>Entrenamiento intensivo para torneos locales, nacionales e internacionales,  
+                       con simulacros y evaluaciones constantes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div th:replace="fragments/footer :: footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

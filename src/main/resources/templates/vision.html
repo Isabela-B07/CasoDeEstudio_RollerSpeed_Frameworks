@@ -1,0 +1,167 @@
+<!-- templates/vision.html -->
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RollerSpeed - Visión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* --- Hero con fondo degradado --- */
+        .hero-vision {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 70vh;
+            width: 100%;
+            background: linear-gradient(90deg, #000000, #6a0dad, #400080, #1e3c72);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-vision img {
+    max-width: 200px;      /* tamaño máximo */
+    height: 200px;         /* altura fija para que sea circular */
+    border-radius: 50%;    /* hace que sea completamente redondo */
+    object-fit: cover;     /* recorta la imagen si es necesario */
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s forwards;
+}
+
+
+        .hero-vision h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* --- Secciones centrales --- */
+        .seccion-central {
+            padding: 60px 20px;
+        }
+
+        .seccion-central h2 {
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .metodologia .card {
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .metodologia .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .logros .col-md-3 h3 {
+            font-size: 3rem;
+            color: #6a0dad;
+            margin-bottom: 10px;
+        }
+
+        /* Separadores visuales */
+        .wave {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+
+        .wave .shape-fill {
+            fill: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <!-- Hero de visión con logo y fondo degradado -->
+    <section class="hero-vision">
+        <img src="/images/LogoRollerSpeed.jpg" alt="Logo RollerSpeed">
+        <h2>INSPIRANDO A LAS NUEVAS GENERACIONES DE PATINADORES</h2>
+    </section>
+
+    <!-- Sección central -->
+    <section class="seccion-central text-center">
+        <div class="container">
+            <h2>Nuestra Visión</h2>
+            <p>Ser reconocidos como una escuela de patinaje líder, destacando por la gran calidad de nuestra enseñanza,
+                la prominente formación integral de nuestros patinadores y el impulso a nuevas generaciones de
+                deportistas que encuentren en el patinaje una ferviente pasión y una oportunidad de crecimiento, tanto
+                personal como competitiva.</p>
+    </section>
+
+    <!-- Separador onda -->
+    <div class="wave">
+        <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+            <path d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <!-- Sección central: enfoque estratégico / metas -->
+    <section class="seccion-central bg-light metodologia">
+        <div class="container text-center">
+            <h2>Enfoque Estratégico</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 text-center">
+                        <i class="bi bi-eye-fill fs-1 text-primary mb-3"></i>
+                        <h5>Excelencia en enseñanza</h5>
+                        <p>Buscamos ofrecer clases de la más alta calidad, con entrenadores capacitados y técnicas innovadoras.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 text-center">
+                        <i class="bi bi-people-fill fs-1 text-primary mb-3"></i>
+                        <h5>Expansión de la comunidad</h5>
+                        <p>Queremos motivar a más personas de todas las edades a disfrutar del patinaje y unirse a nuestra escuela.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 text-center">
+                        <i class="bi bi-trophy-fill fs-1 text-primary mb-3"></i>
+                        <h5>Eventos de alto nivel</h5>
+                        <p>Organizaremos competencias y exhibiciones que inspiren a los estudiantes a superarse continuamente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separador onda invertida -->
+    <div class="wave" style="transform: rotate(180deg);">
+        <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+            <path d="M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <!-- Footer -->
+    <div th:replace="fragments/footer :: footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
