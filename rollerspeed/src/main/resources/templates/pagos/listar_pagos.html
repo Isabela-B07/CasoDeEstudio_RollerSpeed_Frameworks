@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pagos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f5f7ff;
+            font-family: 'Poppins', sans-serif;
+        }
+        .table-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #764ba2;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn-register {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        .btn-register:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <div class="table-container">
+        <h1>Pagos Registrados</h1>
+
+        <!-- Mensajes Flash -->
+        <div th:if="${success}" class="alert alert-success text-center" th:text="${success}"></div>
+        <div th:if="${error}" class="alert alert-danger text-center" th:text="${error}"></div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Estudiante</th>
+                        <th>Fecha</th>
+                        <th>Monto</th>
+                        <th>Método</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${#lists.isEmpty(pagos)}">
+                        <td colspan="6" class="text-center">No hay pagos registrados</td>
+                    </tr>
+                    <tr th:each="pago : ${pagos}">
+                        <td th:text="${pago.estudiante.nombre + ' ' + pago.estudiante.apellido}"></td>
+                        <td th:text="${pago.fechaPago}"></td>
+                        <td th:text="${#numbers.formatDecimal(pago.monto, 1, 'COMMA', 2, 'POINT')}"></td>
+                        <td th:text="${pago.metodoPago}"></td>
+                        <td th:text="${pago.estado}"></td>
+                        <td>
+                            <a th:href="@{/pagos/eliminar/{id}(id=${pago.id})}" 
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('¿Seguro que deseas eliminar este pago?');">Eliminar</a>
+                               <a th:href="@{/pagos/editar/{id}(id=${pago.id})}" 
+                            class="btn btn-warning btn-sm">Editar</a>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-center mt-4">
+            <a th:href="@{/pagos/form}" class="btn btn-register">➕ Registrar nuevo pago</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div th:replace="fragments/footer :: footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

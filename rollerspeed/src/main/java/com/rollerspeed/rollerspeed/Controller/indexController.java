@@ -39,6 +39,10 @@ public class indexController {
         return "eventos"; // Carga eventos.html
     }
 
+    @GetMapping("galeria")
+    public String galeria() {
+        return "galeria"; // Carga galeria.html
+    }
     
 }
 

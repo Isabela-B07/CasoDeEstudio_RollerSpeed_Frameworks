@@ -38,4 +38,8 @@ public class EstudianteModel {
     @NotBlank(message = "El teléfono es obligatorio")
     @Size(min = 7, max = 15, message = "El teléfono debe tener entre 7 y 15 dígitos")
     private String telefono;
+
+    @NotBlank(message = "El medio de pago es obligatorio")
+    @Column(nullable = false)
+    private String medioPago;
 }

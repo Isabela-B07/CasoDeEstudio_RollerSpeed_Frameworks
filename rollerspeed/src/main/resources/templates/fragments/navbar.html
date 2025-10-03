@@ -1,4 +1,3 @@
-<!-- templates/fragments/navbar.html -->
 <div th:fragment="navbar">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-3">
         <!-- Logo -->
@@ -42,15 +41,20 @@
                     <a class="nav-link" th:href="@{/eventos}">Eventos de la Escuela</a>
                 </li>
 
+                <!-- Galería Multimedia -->
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/galeria}">Galería Multimedia</a>
+                </li>
+
                 <!-- Registro -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="registroDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Registro
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark shadow-lg border-0" aria-labelledby="registroDropdown">
-                        <!-- Corregido: apunta a /estudiantes/form -->
                         <li><a class="dropdown-item" th:href="@{/estudiantes/form}">Inscripción de Estudiantes</a></li>
                         <li><a class="dropdown-item" th:href="@{/instructores/form}">Inscripción de Instructor</a></li>
+                        <li><a class="dropdown-item" th:href="@{/clases/form}">Inscripción de Clases</a></li>
                     </ul>
                 </li>
 
@@ -62,7 +66,18 @@
                     <ul class="dropdown-menu dropdown-menu-dark shadow-lg border-0" aria-labelledby="clasesDropdown">
                         <li><a class="dropdown-item" th:href="@{/estudiantes/listar}">Listar Estudiantes</a></li>
                         <li><a class="dropdown-item" th:href="@{/instructores/listar}">Listar Instructores</a></li>
-                        <li><a class="dropdown-item" th:href="@{/clases/estudiantes/eventos}">Calendario Semanal</a></li>
+                        <li><a class="dropdown-item" th:href="@{/calendario}">Calendario de Clases</a></li>
+                    </ul>
+                </li>
+
+                <!-- Pagos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Gestión de Pagos
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark shadow-lg border-0" aria-labelledby="pagosDropdown">
+                        <li><a class="dropdown-item" th:href="@{/pagos/form}">Registrar Pago</a></li>
+                        <li><a class="dropdown-item" th:href="@{/pagos}">Listado de Pagos</a></li>
                     </ul>
                 </li>
 
