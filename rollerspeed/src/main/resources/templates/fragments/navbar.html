@@ -18,7 +18,6 @@
         <!-- Menú -->
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
-
                 <!-- Nosotros -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="valoresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -80,7 +79,17 @@
                         <li><a class="dropdown-item" th:href="@{/pagos}">Listado de Pagos</a></li>
                     </ul>
                 </li>
+            </ul>
 
+            <!-- Botón de Cerrar Sesión (alineado a la derecha) -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <form th:action="@{/logout}" method="post" class="d-flex">
+                        <button type="submit" class="btn btn-outline-light ms-3">
+                            <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+                        </button>
+                    </form>
+                </li>
             </ul>
         </div>
     </nav>

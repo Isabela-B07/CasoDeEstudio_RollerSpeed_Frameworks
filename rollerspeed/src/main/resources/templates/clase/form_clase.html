@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,37 +85,36 @@
                 <label class="form-label">Instructor</label>
                 <select th:field="*{instructor}" class="form-select" required>
                     <option value="">-- Selecciona un instructor --</option>
-                    <option th:each="instructor : ${instructores}" 
-                    th:value="${instructor.id}" 
-                    th:text="${instructor.nombre + ' ' + instructor.apellido}">
-            </option>
-
+                    <option th:each="instructor : ${instructores}"
+                            th:value="${instructor.id}"
+                            th:text="${instructor.nombre + ' ' + instructor.apellido}">
+                    </option>
                 </select>
             </div>
 
-            <!-- Estudiantes (checkbox list) -->
+            <!-- Estudiantes -->
             <div class="mb-3">
                 <label class="form-label">Estudiantes</label>
                 <div class="checkbox-list">
                     <div th:each="estudiante : ${estudiantes}" class="form-check">
-                        <input class="form-check-input" type="checkbox" 
-                               name="estudiantesIds" 
-                               th:value="${estudiante.id}" 
+                        <input class="form-check-input" type="checkbox"
+                               name="estudiantesIds"
+                               th:value="${estudiante.id}"
                                id="estudiante_${estudiante.id}">
                         <label class="form-check-label" th:for="${'estudiante_' + estudiante.id}"
-                               th:text="${estudiante.nombre + ' ' + estudiante.apellido}">
-                        </label>
+                               th:text="${estudiante.nombre + ' ' + estudiante.apellido}"></label>
                     </div>
                 </div>
             </div>
 
-            <!-- Botón -->
+            <!-- Botón Guardar -->
             <div class="text-center">
                 <button type="submit" class="btn btn-submit w-100">Guardar</button>
             </div>
         </form>
 
-        <div class="text-center mt-3">
+        <!-- 🔒 Solo visible para ADMIN -->
+        <div class="text-center mt-3" sec:authorize="hasRole('ADMIN')">
             <a th:href="@{/clases}" class="btn btn-secondary">Ver lista de clases</a>
         </div>
     </div>

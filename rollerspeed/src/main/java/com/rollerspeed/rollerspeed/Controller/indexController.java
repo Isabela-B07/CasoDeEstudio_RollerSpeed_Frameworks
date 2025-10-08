@@ -3,11 +3,15 @@ package com.rollerspeed.rollerspeed.Controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller //Esta notación indica que es una clase controladora
+@Controller
 @RequestMapping("/")
 public class indexController {
+
+    @GetMapping("index")
+    public String index() {
+        return "index";
+    }
 
     @GetMapping("home")
     public String Home() {
@@ -16,36 +20,31 @@ public class indexController {
 
     @GetMapping("mision")
     public String mision() {
-        return "mision"; // Carga mision.html
+        return "mision";
     }
 
     @GetMapping("vision")
     public String vision() {
-        return "vision"; // Carga vision.html
+        return "vision";
     }
 
     @GetMapping("valores")
     public String valores() {
-        return "valores"; // Carga valores.html
+        return "valores";
     }
 
     @GetMapping("servicios")
     public String servicios() {
-        return "servicios"; // Carga servicios.html
+        return "servicios";
     }
 
     @GetMapping("eventos")
     public String eventos() {
-        return "eventos"; // Carga eventos.html
+        return "eventos";
     }
 
     @GetMapping("galeria")
     public String galeria() {
-        return "galeria"; // Carga galeria.html
+        return "galeria";
     }
-    
 }
-
-
-
-

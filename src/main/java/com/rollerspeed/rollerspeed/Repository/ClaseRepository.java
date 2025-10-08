@@ -1,9 +1,0 @@
-package com.rollerspeed.rollerspeed.Repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import com.rollerspeed.rollerspeed.Model.ClaseModel;
-
-@Repository
-public interface ClaseRepository extends JpaRepository<ClaseModel, Long> {
-}
